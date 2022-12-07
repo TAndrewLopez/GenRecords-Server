@@ -59,7 +59,7 @@ User.authenticate = async function ({ username, password }) {
 
   //TODO: RETURNS THE STATUS BUT NOT THE ERROR OBJECT
   if (!user || !(await user.correctPassword(password))) {
-    const error = Error("Incorrect credentials");
+    const error = Error("Incorrect Credentials.");
     error.status = 401;
     throw error;
   }
@@ -76,7 +76,7 @@ User.findByToken = async (token) => {
     }
     return user;
   } catch (err) {
-    const error = Error("Unauthorized");
+    const error = Error("Unauthorized.");
     error.status = 401;
     throw error;
   }

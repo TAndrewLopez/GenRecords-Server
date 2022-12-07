@@ -4,7 +4,7 @@ const USERS = [
   {
     username: "administrator",
     password: "adminPassword",
-    email: "admin@genrecords.com",
+    email: "admin@genRecords.com",
     firstName: "Andrew",
     lastName: "Dobson",
     isAdmin: true,
