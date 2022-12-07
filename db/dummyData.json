@@ -1,0 +1,722 @@
+{
+  "specificUsers": [
+    {
+      "username": "administrator",
+      "password": "adminPassword",
+      "email": "admin@genRecords.com",
+      "firstName": "Andrew",
+      "lastName": "Dobson",
+      "isAdmin": true
+    },
+    {
+      "username": "employee",
+      "password": "employeePassword",
+      "email": "employee@genRecords.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "isAdmin": true
+    }
+  ],
+  "randomUsers": [
+    {
+      "username": "hGonzales0",
+      "password": "fakeUserPassword",
+      "email": "hGonzales0@genRecords.com",
+      "firstName": "Heidi",
+      "lastName": "Gonzales"
+    },
+    {
+      "username": "vJohns1",
+      "password": "fakeUserPassword",
+      "email": "vJohns1@genRecords.com",
+      "firstName": "Violet",
+      "lastName": "Johns"
+    },
+    {
+      "username": "jLewis2",
+      "password": "fakeUserPassword",
+      "email": "jLewis2@genRecords.com",
+      "firstName": "Jaya",
+      "lastName": "Lewis"
+    },
+    {
+      "username": "hVillegas3",
+      "password": "fakeUserPassword",
+      "email": "hVillegas3@genRecords.com",
+      "firstName": "Harriett",
+      "lastName": "Villegas"
+    },
+    {
+      "username": "mHahn4",
+      "password": "fakeUserPassword",
+      "email": "mHahn4@genRecords.com",
+      "firstName": "Mabel",
+      "lastName": "Hahn"
+    },
+    {
+      "username": "bCharles5",
+      "password": "fakeUserPassword",
+      "email": "bCharles5@genRecords.com",
+      "firstName": "Bibi",
+      "lastName": "Charles"
+    },
+    {
+      "username": "sGallagher6",
+      "password": "fakeUserPassword",
+      "email": "sGallagher6@genRecords.com",
+      "firstName": "Sophie",
+      "lastName": "Gallagher"
+    },
+    {
+      "username": "mPage7",
+      "password": "fakeUserPassword",
+      "email": "mPage7@genRecords.com",
+      "firstName": "Madeline",
+      "lastName": "Page"
+    },
+    {
+      "username": "sBates8",
+      "password": "fakeUserPassword",
+      "email": "sBates8@genRecords.com",
+      "firstName": "Syeda",
+      "lastName": "Bates"
+    },
+    {
+      "username": "nSalinas9",
+      "password": "fakeUserPassword",
+      "email": "nSalinas9@genRecords.com",
+      "firstName": "Nellie",
+      "lastName": "Salinas"
+    },
+    {
+      "username": "rCastaneda10",
+      "password": "fakeUserPassword",
+      "email": "rCastaneda10@genRecords.com",
+      "firstName": "Renee",
+      "lastName": "Castaneda"
+    },
+    {
+      "username": "cCasey11",
+      "password": "fakeUserPassword",
+      "email": "cCasey11@genRecords.com",
+      "firstName": "Charlie",
+      "lastName": "Casey"
+    },
+    {
+      "username": "oBerger12",
+      "password": "fakeUserPassword",
+      "email": "oBerger12@genRecords.com",
+      "firstName": "Olive",
+      "lastName": "Berger"
+    },
+    {
+      "username": "mMccullough13",
+      "password": "fakeUserPassword",
+      "email": "mMccullough13@genRecords.com",
+      "firstName": "Matilda",
+      "lastName": "Mccullough"
+    },
+    {
+      "username": "kMcclain14",
+      "password": "fakeUserPassword",
+      "email": "kMcclain14@genRecords.com",
+      "firstName": "Kristen",
+      "lastName": "Mcclain"
+    },
+    {
+      "username": "aSpence15",
+      "password": "fakeUserPassword",
+      "email": "aSpence15@genRecords.com",
+      "firstName": "Ann",
+      "lastName": "Spence"
+    },
+    {
+      "username": "mCotton16",
+      "password": "fakeUserPassword",
+      "email": "mCotton16@genRecords.com",
+      "firstName": "Mina",
+      "lastName": "Cotton"
+    },
+    {
+      "username": "pBennett17",
+      "password": "fakeUserPassword",
+      "email": "pBennett17@genRecords.com",
+      "firstName": "Paula",
+      "lastName": "Bennett"
+    },
+    {
+      "username": "aSnow18",
+      "password": "fakeUserPassword",
+      "email": "aSnow18@genRecords.com",
+      "firstName": "Alexia",
+      "lastName": "Snow"
+    },
+    {
+      "username": "aAli19",
+      "password": "fakeUserPassword",
+      "email": "aAli19@genRecords.com",
+      "firstName": "Aneesa",
+      "lastName": "Ali"
+    },
+    {
+      "username": "dGross20",
+      "password": "fakeUserPassword",
+      "email": "dGross20@genRecords.com",
+      "firstName": "Davina",
+      "lastName": "Gross"
+    },
+    {
+      "username": "lMelendez21",
+      "password": "fakeUserPassword",
+      "email": "lMelendez21@genRecords.com",
+      "firstName": "Laurie",
+      "lastName": "Melendez"
+    },
+    {
+      "username": "jLang22",
+      "password": "fakeUserPassword",
+      "email": "jLang22@genRecords.com",
+      "firstName": "Jayden",
+      "lastName": "Lang"
+    },
+    {
+      "username": "mCollier23",
+      "password": "fakeUserPassword",
+      "email": "mCollier23@genRecords.com",
+      "firstName": "Marley",
+      "lastName": "Collier"
+    },
+    {
+      "username": "aWilliams24",
+      "password": "fakeUserPassword",
+      "email": "aWilliams24@genRecords.com",
+      "firstName": "Asia",
+      "lastName": "Williams"
+    },
+    {
+      "username": "aBurch25",
+      "password": "fakeUserPassword",
+      "email": "aBurch25@genRecords.com",
+      "firstName": "Anais",
+      "lastName": "Burch"
+    },
+    {
+      "username": "zSalazar26",
+      "password": "fakeUserPassword",
+      "email": "zSalazar26@genRecords.com",
+      "firstName": "Zain",
+      "lastName": "Salazar"
+    },
+    {
+      "username": "dJefferson27",
+      "password": "fakeUserPassword",
+      "email": "dJefferson27@genRecords.com",
+      "firstName": "Dora",
+      "lastName": "Jefferson"
+    },
+    {
+      "username": "eCombs28",
+      "password": "fakeUserPassword",
+      "email": "eCombs28@genRecords.com",
+      "firstName": "Erin",
+      "lastName": "Combs"
+    },
+    {
+      "username": "kRowland29",
+      "password": "fakeUserPassword",
+      "email": "kRowland29@genRecords.com",
+      "firstName": "Kitty",
+      "lastName": "Rowland"
+    },
+    {
+      "username": "bMurphy30",
+      "password": "fakeUserPassword",
+      "email": "bMurphy30@genRecords.com",
+      "firstName": "Blake",
+      "lastName": "Murphy"
+    },
+    {
+      "username": "jDelacruz31",
+      "password": "fakeUserPassword",
+      "email": "jDelacruz31@genRecords.com",
+      "firstName": "Joel",
+      "lastName": "Delacruz"
+    },
+    {
+      "username": "vRiley32",
+      "password": "fakeUserPassword",
+      "email": "vRiley32@genRecords.com",
+      "firstName": "Valentina",
+      "lastName": "Riley"
+    },
+    {
+      "username": "aRyan33",
+      "password": "fakeUserPassword",
+      "email": "aRyan33@genRecords.com",
+      "firstName": "Amie",
+      "lastName": "Ryan"
+    },
+    {
+      "username": "nMendoza34",
+      "password": "fakeUserPassword",
+      "email": "nMendoza34@genRecords.com",
+      "firstName": "Natalia",
+      "lastName": "Mendoza"
+    },
+    {
+      "username": "eSampson35",
+      "password": "fakeUserPassword",
+      "email": "eSampson35@genRecords.com",
+      "firstName": "Estelle",
+      "lastName": "Sampson"
+    },
+    {
+      "username": "nKnapp36",
+      "password": "fakeUserPassword",
+      "email": "nKnapp36@genRecords.com",
+      "firstName": "Nieve",
+      "lastName": "Knapp"
+    },
+    {
+      "username": "tRollins37",
+      "password": "fakeUserPassword",
+      "email": "tRollins37@genRecords.com",
+      "firstName": "Tess",
+      "lastName": "Rollins"
+    },
+    {
+      "username": "cWright38",
+      "password": "fakeUserPassword",
+      "email": "cWright38@genRecords.com",
+      "firstName": "Chiara",
+      "lastName": "Wright"
+    },
+    {
+      "username": "aDavis39",
+      "password": "fakeUserPassword",
+      "email": "aDavis39@genRecords.com",
+      "firstName": "Alicia",
+      "lastName": "Davis"
+    },
+    {
+      "username": "hSoto40",
+      "password": "fakeUserPassword",
+      "email": "hSoto40@genRecords.com",
+      "firstName": "Hallie",
+      "lastName": "Soto"
+    },
+    {
+      "username": "lWatts41",
+      "password": "fakeUserPassword",
+      "email": "lWatts41@genRecords.com",
+      "firstName": "Leia",
+      "lastName": "Watts"
+    },
+    {
+      "username": "jRoy42",
+      "password": "fakeUserPassword",
+      "email": "jRoy42@genRecords.com",
+      "firstName": "Jordan",
+      "lastName": "Roy"
+    },
+    {
+      "username": "jMckay43",
+      "password": "fakeUserPassword",
+      "email": "jMckay43@genRecords.com",
+      "firstName": "Juanita",
+      "lastName": "Mckay"
+    },
+    {
+      "username": "sVance44",
+      "password": "fakeUserPassword",
+      "email": "sVance44@genRecords.com",
+      "firstName": "Scarlet",
+      "lastName": "Vance"
+    },
+    {
+      "username": "cWheeler45",
+      "password": "fakeUserPassword",
+      "email": "cWheeler45@genRecords.com",
+      "firstName": "Connie",
+      "lastName": "Wheeler"
+    },
+    {
+      "username": "oMosley46",
+      "password": "fakeUserPassword",
+      "email": "oMosley46@genRecords.com",
+      "firstName": "Ollie",
+      "lastName": "Mosley"
+    },
+    {
+      "username": "mBenjamin47",
+      "password": "fakeUserPassword",
+      "email": "mBenjamin47@genRecords.com",
+      "firstName": "Mollie",
+      "lastName": "Benjamin"
+    },
+    {
+      "username": "kBeard48",
+      "password": "fakeUserPassword",
+      "email": "kBeard48@genRecords.com",
+      "firstName": "Khadija",
+      "lastName": "Beard"
+    },
+    {
+      "username": "aFinch49",
+      "password": "fakeUserPassword",
+      "email": "aFinch49@genRecords.com",
+      "firstName": "Ashley",
+      "lastName": "Finch"
+    },
+    {
+      "username": "cFerguson50",
+      "password": "fakeUserPassword",
+      "email": "cFerguson50@genRecords.com",
+      "firstName": "Clementine",
+      "lastName": "Ferguson"
+    },
+    {
+      "username": "nAustin51",
+      "password": "fakeUserPassword",
+      "email": "nAustin51@genRecords.com",
+      "firstName": "Neo",
+      "lastName": "Austin"
+    },
+    {
+      "username": "hFrazier52",
+      "password": "fakeUserPassword",
+      "email": "hFrazier52@genRecords.com",
+      "firstName": "Humaira",
+      "lastName": "Frazier"
+    },
+    {
+      "username": "aHamilton53",
+      "password": "fakeUserPassword",
+      "email": "aHamilton53@genRecords.com",
+      "firstName": "Alma",
+      "lastName": "Hamilton"
+    },
+    {
+      "username": "aDavies54",
+      "password": "fakeUserPassword",
+      "email": "aDavies54@genRecords.com",
+      "firstName": "Amira",
+      "lastName": "Davies"
+    },
+    {
+      "username": "rUnderwood55",
+      "password": "fakeUserPassword",
+      "email": "rUnderwood55@genRecords.com",
+      "firstName": "Rosalind",
+      "lastName": "Underwood"
+    },
+    {
+      "username": "iBaird56",
+      "password": "fakeUserPassword",
+      "email": "iBaird56@genRecords.com",
+      "firstName": "Izabella",
+      "lastName": "Baird"
+    },
+    {
+      "username": "gFlores57",
+      "password": "fakeUserPassword",
+      "email": "gFlores57@genRecords.com",
+      "firstName": "Gabriella",
+      "lastName": "Flores"
+    },
+    {
+      "username": "mKnight58",
+      "password": "fakeUserPassword",
+      "email": "mKnight58@genRecords.com",
+      "firstName": "Molly",
+      "lastName": "Knight"
+    },
+    {
+      "username": "rMassey59",
+      "password": "fakeUserPassword",
+      "email": "rMassey59@genRecords.com",
+      "firstName": "Ruqayyah",
+      "lastName": "Massey"
+    },
+    {
+      "username": "dWhitaker60",
+      "password": "fakeUserPassword",
+      "email": "dWhitaker60@genRecords.com",
+      "firstName": "Deborah",
+      "lastName": "Whitaker"
+    },
+    {
+      "username": "tTerry61",
+      "password": "fakeUserPassword",
+      "email": "tTerry61@genRecords.com",
+      "firstName": "Tina",
+      "lastName": "Terry"
+    },
+    {
+      "username": "sMiddleton62",
+      "password": "fakeUserPassword",
+      "email": "sMiddleton62@genRecords.com",
+      "firstName": "Sian",
+      "lastName": "Middleton"
+    },
+    {
+      "username": "jLarson63",
+      "password": "fakeUserPassword",
+      "email": "jLarson63@genRecords.com",
+      "firstName": "Jasmin",
+      "lastName": "Larson"
+    },
+    {
+      "username": "kMunoz64",
+      "password": "fakeUserPassword",
+      "email": "kMunoz64@genRecords.com",
+      "firstName": "Kirsty",
+      "lastName": "Munoz"
+    },
+    {
+      "username": "cMathis65",
+      "password": "fakeUserPassword",
+      "email": "cMathis65@genRecords.com",
+      "firstName": "Cordelia",
+      "lastName": "Mathis"
+    },
+    {
+      "username": "gGay66",
+      "password": "fakeUserPassword",
+      "email": "gGay66@genRecords.com",
+      "firstName": "Gina",
+      "lastName": "Gay"
+    },
+    {
+      "username": "eKey67",
+      "password": "fakeUserPassword",
+      "email": "eKey67@genRecords.com",
+      "firstName": "Everly",
+      "lastName": "Key"
+    },
+    {
+      "username": "sHiggins68",
+      "password": "fakeUserPassword",
+      "email": "sHiggins68@genRecords.com",
+      "firstName": "Spencer",
+      "lastName": "Higgins"
+    },
+    {
+      "username": "lMora69",
+      "password": "fakeUserPassword",
+      "email": "lMora69@genRecords.com",
+      "firstName": "Leona",
+      "lastName": "Mora"
+    },
+    {
+      "username": "aGoodman70",
+      "password": "fakeUserPassword",
+      "email": "aGoodman70@genRecords.com",
+      "firstName": "Alana",
+      "lastName": "Goodman"
+    },
+    {
+      "username": "kTyler71",
+      "password": "fakeUserPassword",
+      "email": "kTyler71@genRecords.com",
+      "firstName": "Kayla",
+      "lastName": "Tyler"
+    },
+    {
+      "username": "lEdwards72",
+      "password": "fakeUserPassword",
+      "email": "lEdwards72@genRecords.com",
+      "firstName": "Lara",
+      "lastName": "Edwards"
+    },
+    {
+      "username": "fMatthams73",
+      "password": "fakeUserPassword",
+      "email": "fMatthams73@genRecords.com",
+      "firstName": "Fay",
+      "lastName": "Matthams"
+    },
+    {
+      "username": "pWilson74",
+      "password": "fakeUserPassword",
+      "email": "pWilson74@genRecords.com",
+      "firstName": "Phoenix",
+      "lastName": "Wilson"
+    },
+    {
+      "username": "sMclean75",
+      "password": "fakeUserPassword",
+      "email": "sMclean75@genRecords.com",
+      "firstName": "Samara",
+      "lastName": "Mclean"
+    },
+    {
+      "username": "tDuncan76",
+      "password": "fakeUserPassword",
+      "email": "tDuncan76@genRecords.com",
+      "firstName": "Tanya",
+      "lastName": "Duncan"
+    },
+    {
+      "username": "mRobbins77",
+      "password": "fakeUserPassword",
+      "email": "mRobbins77@genRecords.com",
+      "firstName": "Mason",
+      "lastName": "Robbins"
+    },
+    {
+      "username": "mMiles78",
+      "password": "fakeUserPassword",
+      "email": "mMiles78@genRecords.com",
+      "firstName": "Mariyah",
+      "lastName": "Miles"
+    },
+    {
+      "username": "aRomero79",
+      "password": "fakeUserPassword",
+      "email": "aRomero79@genRecords.com",
+      "firstName": "Alexa",
+      "lastName": "Romero"
+    },
+    {
+      "username": "lWashington80",
+      "password": "fakeUserPassword",
+      "email": "lWashington80@genRecords.com",
+      "firstName": "Lillie",
+      "lastName": "Washington"
+    },
+    {
+      "username": "mBallard81",
+      "password": "fakeUserPassword",
+      "email": "mBallard81@genRecords.com",
+      "firstName": "Maddie",
+      "lastName": "Ballard"
+    },
+    {
+      "username": "mKramer82",
+      "password": "fakeUserPassword",
+      "email": "mKramer82@genRecords.com",
+      "firstName": "Mahnoor",
+      "lastName": "Kramer"
+    },
+    {
+      "username": "eLogan83",
+      "password": "fakeUserPassword",
+      "email": "eLogan83@genRecords.com",
+      "firstName": "Eva",
+      "lastName": "Logan"
+    },
+    {
+      "username": "lColon84",
+      "password": "fakeUserPassword",
+      "email": "lColon84@genRecords.com",
+      "firstName": "Louie",
+      "lastName": "Colon"
+    },
+    {
+      "username": "nShannon85",
+      "password": "fakeUserPassword",
+      "email": "nShannon85@genRecords.com",
+      "firstName": "Nina",
+      "lastName": "Shannon"
+    },
+    {
+      "username": "fFriedman86",
+      "password": "fakeUserPassword",
+      "email": "fFriedman86@genRecords.com",
+      "firstName": "Farrah",
+      "lastName": "Friedman"
+    },
+    {
+      "username": "mRichard87",
+      "password": "fakeUserPassword",
+      "email": "mRichard87@genRecords.com",
+      "firstName": "Michelle",
+      "lastName": "Richard"
+    },
+    {
+      "username": "kConner88",
+      "password": "fakeUserPassword",
+      "email": "kConner88@genRecords.com",
+      "firstName": "Keanu",
+      "lastName": "Conner"
+    },
+    {
+      "username": "bMcpherson89",
+      "password": "fakeUserPassword",
+      "email": "bMcpherson89@genRecords.com",
+      "firstName": "Bronwyn",
+      "lastName": "Mcpherson"
+    },
+    {
+      "username": "mHale90",
+      "password": "fakeUserPassword",
+      "email": "mHale90@genRecords.com",
+      "firstName": "Maddison",
+      "lastName": "Hale"
+    },
+    {
+      "username": "lTanner91",
+      "password": "fakeUserPassword",
+      "email": "lTanner91@genRecords.com",
+      "firstName": "Liana",
+      "lastName": "Tanner"
+    },
+    {
+      "username": "rSmith92",
+      "password": "fakeUserPassword",
+      "email": "rSmith92@genRecords.com",
+      "firstName": "Rhea",
+      "lastName": "Smith"
+    },
+    {
+      "username": "zPotter93",
+      "password": "fakeUserPassword",
+      "email": "zPotter93@genRecords.com",
+      "firstName": "Zaynab",
+      "lastName": "Potter"
+    },
+    {
+      "username": "mArroyo94",
+      "password": "fakeUserPassword",
+      "email": "mArroyo94@genRecords.com",
+      "firstName": "Mariah",
+      "lastName": "Arroyo"
+    },
+    {
+      "username": "tAcevedo95",
+      "password": "fakeUserPassword",
+      "email": "tAcevedo95@genRecords.com",
+      "firstName": "Tara",
+      "lastName": "Acevedo"
+    },
+    {
+      "username": "kGilmore96",
+      "password": "fakeUserPassword",
+      "email": "kGilmore96@genRecords.com",
+      "firstName": "Kacie",
+      "lastName": "Gilmore"
+    },
+    {
+      "username": "sHarrell97",
+      "password": "fakeUserPassword",
+      "email": "sHarrell97@genRecords.com",
+      "firstName": "Samira",
+      "lastName": "Harrell"
+    },
+    {
+      "username": "jObrien98",
+      "password": "fakeUserPassword",
+      "email": "jObrien98@genRecords.com",
+      "firstName": "Jazmin",
+      "lastName": "Obrien"
+    },
+    {
+      "username": "tDorsey99",
+      "password": "fakeUserPassword",
+      "email": "tDorsey99@genRecords.com",
+      "firstName": "Thea",
+      "lastName": "Dorsey"
+    }
+  ]
+}
