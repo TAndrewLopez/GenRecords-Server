@@ -1,5 +1,5 @@
 const { conn, Artist, Track, User, Vinyl } = require("./");
-const { randomUsers, specificUsers } = require("./dummyData.json");
+const { randomUsers, specificUsers } = require("./helpers/dummyData.json");
 const { getAlbumData } = require("./helpers/spotifyAPI");
 
 const seed = async () => {
@@ -12,7 +12,8 @@ const seed = async () => {
 
     //LOADING ALBUMS
     const [albums, artists] = await getAlbumData();
-    const products = await Promise.all(
+
+    const thing = await Promise.all(
       albums.map(async (album) => {
         //find artist to assign to product
         let art = await Artist.findOne({
