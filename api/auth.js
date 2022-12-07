@@ -3,7 +3,7 @@ const { requireToken, isAdmin } = require("./middleware");
 const { User } = require("../db");
 const cookie = require("cookie");
 
-router.get("/", requireToken, async (req, res) => {
+router.get("/", requireToken, async (req, res, next) => {
   try {
     const users = await User.findAll({
       attributes: [
@@ -18,21 +18,21 @@ router.get("/", requireToken, async (req, res) => {
 
     return res.status(200).json(users);
   } catch (error) {
-    return res.status(500).json(error);
+    next(error);
   }
 });
 
-router.post("/login", async (req, res) => {
+router.post("/login", async (req, res, next) => {
   try {
     const { username, password } = req.body;
     const token = await User.authenticate({ username, password });
     return res.status(202).json({ authorization: token });
   } catch (error) {
-    return res.status(500).json(error);
+    return next(error);
   }
 });
 
-router.post("/signUp", async (req, res) => {
+router.post("/signUp", async (req, res, next) => {
   try {
     const { username, password, email, firstName, lastName } = req.body;
     const user = await User.create({
@@ -43,8 +43,8 @@ router.post("/signUp", async (req, res) => {
       lastName,
     });
     return res.status(201).json({ user });
-  } catch (err) {
-    return res.status(500).json(err);
+  } catch (error) {
+    next(error);
   }
 });
 
