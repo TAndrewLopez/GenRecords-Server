@@ -69,9 +69,8 @@ User.authenticate = async function ({ username, password }) {
 
 User.findByToken = async (token) => {
   try {
-    const tempId = token;
-    // const { id } = await jwt.verify(token, process.env.JWT);
-    const user = await User.findByPk(tempId);
+    const { id } = await jwt.verify(token, process.env.JWT);
+    const user = await User.findByPk(id);
     if (!user) {
       throw "";
     }
