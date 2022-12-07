@@ -39,14 +39,34 @@ const User = conn.define("user", {
 });
 
 //INSTANCE METHODS
+User.prototype.correctPassword = function (password) {
+  return bcrypt.compare(password, this.password);
+};
+
 User.prototype.generateToken = function () {
-  const token = jwt.sign({
-    exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
-    id: this.id,
-  });
+  return jwt.sign(
+    {
+      exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
+      id: this.id,
+    },
+    process.env.JWT
+  );
 };
 
 //CLASS METHODS
+User.authenticate = async function ({ username, password }) {
+  const user = await this.findOne({ where: { username } });
+
+  //TODO: RETURNS THE STATUS BUT NOT THE ERROR OBJECT
+  if (!user || !(await user.correctPassword(password))) {
+    const error = Error("Incorrect credentials");
+    error.status = 401;
+    throw error;
+  }
+
+  return user.generateToken();
+};
+
 User.findByToken = async (token) => {
   try {
     const tempId = token;
