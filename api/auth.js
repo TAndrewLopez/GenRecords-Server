@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { requireToken, isAdmin } = require("./middleware");
 const { User } = require("../db");
-const cookie = require("cookie");
 
 router.get("/", requireToken, async (req, res, next) => {
   try {
@@ -15,7 +14,7 @@ router.get("/", requireToken, async (req, res, next) => {
         "isAdmin",
       ],
     });
-
+    users.sort((a, b) => a.id - b.id);
     return res.status(200).json(users);
   } catch (error) {
     next(error);
