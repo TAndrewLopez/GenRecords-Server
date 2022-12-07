@@ -1,15 +1,21 @@
+const { User } = require("../db");
+
 const requireToken = async (req, res, next) => {
   try {
-    const token = req.headers.authorization;
-    return console.log("success");
-  } catch (error) {
-    next(error);
+    const { authorization } = req.headers;
+    const user = await User.findByToken(authorization);
+    req.user = user;
+    next();
+  } catch (err) {
+    next(err);
   }
 };
 
 const isAdmin = (req, res, next) => {
   if (!req.user.isAdmin) {
-    return res.status(401).json({ message: "Unauthorized" });
+    return res.sendStatus(403);
   }
-  next();
+  return next();
 };
+
+module.exports = { requireToken, isAdmin };

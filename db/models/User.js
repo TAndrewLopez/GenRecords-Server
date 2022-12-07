@@ -7,13 +7,17 @@ const {
 } = conn;
 
 const User = conn.define("user", {
+  firstName: {
+    type: STRING,
+    allowNull: false,
+  },
+  lastName: {
+    type: STRING,
+    allowNull: false,
+  },
   username: {
     type: STRING,
     unique: true,
-    allowNull: false,
-  },
-  password: {
-    type: STRING,
     allowNull: false,
   },
   email: {
@@ -24,11 +28,7 @@ const User = conn.define("user", {
       isEmail: true,
     },
   },
-  firstName: {
-    type: STRING,
-    allowNull: false,
-  },
-  lastName: {
+  password: {
     type: STRING,
     allowNull: false,
   },
@@ -38,11 +38,29 @@ const User = conn.define("user", {
   },
 });
 
+//INSTANCE METHODS
 User.prototype.generateToken = function () {
   const token = jwt.sign({
     exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
     id: this.id,
   });
+};
+
+//CLASS METHODS
+User.findByToken = async (token) => {
+  try {
+    const tempId = token;
+    // const { id } = await jwt.verify(token, process.env.JWT);
+    const user = await User.findByPk(tempId);
+    if (!user) {
+      throw "";
+    }
+    return user;
+  } catch (err) {
+    const error = Error("Unauthorized");
+    error.status = 401;
+    throw error;
+  }
 };
 
 //HOOKS
