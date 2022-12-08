@@ -1,8 +1,13 @@
 const router = require("express").Router();
+const { Artist, Vinyl } = require("../db");
 
-router.get("/", (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
-    return res.status(200).json({ message: "Pinged Shop" });
+    const vinyls = await Vinyl.findAll({
+      include: Artist,
+    });
+    vinyls.sort((a, b) => a.id - b.id);
+    return res.status(200).json(vinyls);
   } catch (error) {
     next(error);
   }
