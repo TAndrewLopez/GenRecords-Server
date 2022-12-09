@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { requireToken, isAdmin } = require("./middleware");
 const { User } = require("../db");
 
-router.get("/", requireToken, async (req, res, next) => {
+router.get("/", requireToken, isAdmin, async (req, res, next) => {
   try {
     const users = await User.findAll({
       attributes: [
@@ -15,7 +15,7 @@ router.get("/", requireToken, async (req, res, next) => {
       ],
     });
     users.sort((a, b) => a.id - b.id);
-    return res.status(200).json(users);
+    return res.status(200).json({ users });
   } catch (error) {
     next(error);
   }
@@ -43,7 +43,7 @@ router.post("/signUp", async (req, res, next) => {
     });
     return res.status(201).json({ user });
   } catch (error) {
-    return res.status(500).json(error);
+    return res.status(500).json({ error });
   }
 });
 

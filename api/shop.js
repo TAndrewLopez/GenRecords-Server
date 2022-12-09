@@ -7,7 +7,7 @@ router.get("/", async (req, res, next) => {
       include: Artist,
     });
     vinyls.sort((a, b) => a.id - b.id);
-    return res.status(200).json(vinyls);
+    return res.status(200).json({ vinyls });
   } catch (error) {
     next(error);
   }
