@@ -37,18 +37,6 @@ router.post("/login", async (req, res, next) => {
   try {
     const { username, password } = req.body;
     const token = await User.authenticate({ username, password });
-
-    res.setHeader(
-      "Set-Cookie",
-      cookie.serialize("authorization", token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV !== "development",
-        sameSite: "strict",
-        maxAge: 60 * 60 * 24 * 30,
-        // path: "/",
-      })
-    );
-
     return res.status(202).json({ authorization: token });
   } catch (error) {
     return next(error);
