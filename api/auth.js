@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const { requireToken, isAdmin } = require("./middleware");
+const cookie = require("cookie");
 const { User } = require("../db");
+const { requireToken, isAdmin } = require("./middleware");
 
 router.get("/", requireToken, isAdmin, async (req, res, next) => {
   try {
@@ -21,10 +22,33 @@ router.get("/", requireToken, isAdmin, async (req, res, next) => {
   }
 });
 
+router.get("/me", requireToken, async (req, res, next) => {
+  try {
+    const { id, firstName, lastName, username, email, isAdmin } = req.user;
+    return res
+      .status(200)
+      .json({ id, firstName, lastName, username, email, isAdmin });
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.post("/login", async (req, res, next) => {
   try {
     const { username, password } = req.body;
     const token = await User.authenticate({ username, password });
+
+    res.setHeader(
+      "Set-Cookie",
+      cookie.serialize("authorization", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV !== "development",
+        sameSite: "strict",
+        maxAge: 60 * 60 * 24 * 30,
+        // path: "/",
+      })
+    );
+
     return res.status(202).json({ authorization: token });
   } catch (error) {
     return next(error);
