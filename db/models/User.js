@@ -9,11 +9,11 @@ const {
 const User = conn.define("user", {
   firstName: {
     type: STRING,
-    allowNull: false,
+    // allowNull: false,
   },
   lastName: {
     type: STRING,
-    allowNull: false,
+    // allowNull: false,
   },
   username: {
     type: STRING,
