@@ -1,20 +1,28 @@
 {
   "specificUsers": [
     {
-      "username": "administrator",
-      "password": "adminPassword",
-      "email": "admin@genRecords.com",
-      "firstName": "Andrew",
+      "username": "dev",
+      "password": "devPassword",
+      "email": "dev@genRecords.com",
+      "firstName": "Drew",
       "lastName": "Dobson",
       "isAdmin": true
     },
     {
-      "username": "employee",
-      "password": "employeePassword",
-      "email": "employee@genRecords.com",
-      "firstName": "John",
-      "lastName": "Doe",
+      "username": "administrator",
+      "password": "adminPassword",
+      "email": "admin@genRecords.com",
+      "firstName": "Frank",
+      "lastName": "Reynolds",
       "isAdmin": true
+    },
+    {
+      "username": "visitor",
+      "password": "visitorPassword",
+      "email": "visitor@genRecords.com",
+      "firstName": "Ronald",
+      "lastName": "MacDonlad",
+      "isAdmin": false
     }
   ],
   "randomUsers": [
