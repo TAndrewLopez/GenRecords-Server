@@ -53,7 +53,8 @@ router.post("/signUp", async (req, res, next) => {
       firstName,
       lastName,
     });
-    return res.status(201).json({ user });
+
+    return res.status(201).json({ authorization: user.generateToken() });
   } catch (error) {
     return res.status(500).json({ error });
   }
