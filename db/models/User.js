@@ -1,7 +1,7 @@
 const conn = require("../conn");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-
+const Order = require("./Order");
 const {
   Sequelize: { STRING, BOOLEAN },
 } = conn;
@@ -93,6 +93,10 @@ User.beforeCreate(async (user) => {
 User.beforeUpdate(async (user) => {
   const hashedPassword = await bcrypt.hash(user.password, SALT_ROUNDS);
   user.password = hashedPassword;
+});
+
+User.afterCreate(async (user) => {
+  const order = Order.create({ userId: user.id });
 });
 
 module.exports = User;
