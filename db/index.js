@@ -9,8 +9,8 @@ Order.belongsTo(User);
 Order.hasMany(LineItem);
 LineItem.belongsTo(Order);
 
-// Vinyl.hasMany(LineItem);
-// LineItem.belongsTo(Vinyl);
+Vinyl.hasMany(LineItem);
+LineItem.belongsTo(Vinyl);
 
 Vinyl.hasMany(Track);
 Track.belongsTo(Vinyl);
