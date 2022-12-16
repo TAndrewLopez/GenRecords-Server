@@ -1,14 +1,6 @@
 {
   "specificUsers": [
     {
-      "username": "dev",
-      "password": "devPassword",
-      "email": "dev@genRecords.com",
-      "firstName": "Drew",
-      "lastName": "Dobson",
-      "isAdmin": true
-    },
-    {
       "username": "administrator",
       "password": "adminPassword",
       "email": "admin@genRecords.com",

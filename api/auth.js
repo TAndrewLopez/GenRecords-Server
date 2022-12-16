@@ -22,6 +22,17 @@ router.get("/", requireToken, isAdmin, async (req, res, next) => {
   }
 });
 
+router.put("/:userId", requireToken, async (req, res, next) => {
+  try {
+    const user = await User.findByPk(req.user.id);
+    const { firstName, lastName, username, email, password, img } = req.body;
+    await user.update({ firstName, lastName, username, email, password, img });
+    res.json({ user });
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get("/me", requireToken, async (req, res, next) => {
   try {
     const { id, firstName, lastName, username, email, isAdmin } = req.user;

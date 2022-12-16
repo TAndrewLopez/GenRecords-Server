@@ -58,7 +58,7 @@ router.get("/cart/:userId", requireToken, async (req, res, next) => {
   }
 });
 
-router.put("/cart/:prodId", requireToken, async (req, res, next) => {
+router.put("/cart/:vinylId", requireToken, async (req, res, next) => {
   try {
     const order = await Order.findOne({
       where: {
@@ -67,9 +67,21 @@ router.put("/cart/:prodId", requireToken, async (req, res, next) => {
       },
     });
 
+    const existingItem = await LineItem.findOne({
+      where: {
+        orderId: order.id,
+        vinylId: req.params.vinylId,
+      },
+    });
+
+    if (existingItem) {
+      await existingItem.update({ qty: existingItem.qty + 1 });
+      return res.json({ existingItem });
+    }
+
     const lineItem = await LineItem.create({
       orderId: order.id,
-      vinylId: req.params.prodId,
+      vinylId: req.params.vinylId,
     });
 
     const newItem = await LineItem.findByPk(lineItem.id, {
