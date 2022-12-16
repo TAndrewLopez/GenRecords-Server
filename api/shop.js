@@ -37,7 +37,6 @@ router.get("/cart/:userId", requireToken, async (req, res, next) => {
   try {
     const userOrders = await Order.findAll({
       where: { userId: req.params.userId },
-      attributes: ["id", "complete"],
       include: {
         model: LineItem,
         attributes: ["id", "qty"],
@@ -51,6 +50,8 @@ router.get("/cart/:userId", requireToken, async (req, res, next) => {
         },
       },
     });
+
+    userOrders.sort((a, b) => a.id - b.id);
     res.status(200).json({ userOrders });
   } catch (error) {
     next(error);
@@ -94,7 +95,6 @@ router.delete("/cart/:lineId", requireToken, async (req, res, next) => {
     const deletedItem = await LineItem.destroy({
       where: { id: req.params.lineId },
     });
-    console.log(deletedItem);
     res.status(200).send({ deletedItem });
   } catch (error) {
     next(error);
