@@ -3,6 +3,7 @@ const cookie = require("cookie");
 const { User } = require("../db");
 const { requireToken, isAdmin } = require("./middleware");
 
+// ALL USERS
 router.get("/", requireToken, isAdmin, async (req, res, next) => {
   try {
     const users = await User.findAll({
@@ -22,6 +23,7 @@ router.get("/", requireToken, isAdmin, async (req, res, next) => {
   }
 });
 
+//USER SPECIFIC
 router.put("/:userId", requireToken, async (req, res, next) => {
   try {
     const user = await User.findByPk(req.user.id);
@@ -40,12 +42,14 @@ router.put("/:userId", requireToken, async (req, res, next) => {
   }
 });
 
+//AUTH ROUTES
+
 router.get("/me", requireToken, async (req, res, next) => {
   try {
-    const { id, firstName, lastName, username, email, isAdmin } = req.user;
+    const { id, firstName, lastName, username, email, isAdmin, img } = req.user;
     return res
       .status(200)
-      .json({ id, firstName, lastName, username, email, isAdmin });
+      .json({ id, firstName, lastName, username, email, isAdmin, img });
   } catch (error) {
     next(error);
   }
