@@ -76,7 +76,15 @@ router.put("/cart/:vinylId", requireToken, async (req, res, next) => {
 
     if (existingItem) {
       await existingItem.update({ qty: existingItem.qty + 1 });
-      return res.json({ existingItem });
+      const newItem = await LineItem.findByPk(existingItem.id, {
+        include: {
+          model: Vinyl,
+          include: {
+            model: Artist,
+          },
+        },
+      });
+      return res.json({ newItem });
     }
 
     const lineItem = await LineItem.create({
@@ -85,18 +93,15 @@ router.put("/cart/:vinylId", requireToken, async (req, res, next) => {
     });
 
     const newItem = await LineItem.findByPk(lineItem.id, {
-      attributes: ["id", "qty"],
       include: {
         model: Vinyl,
-        attributes: ["id", "name", "stock", "price", "img"],
         include: {
           model: Artist,
-          attributes: ["id", "name"],
         },
       },
     });
 
-    res.status(200).json({ newItem });
+    res.json({ newItem });
   } catch (error) {
     next(error);
   }
