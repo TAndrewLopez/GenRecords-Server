@@ -9,9 +9,11 @@ const {
 const User = conn.define("user", {
   firstName: {
     type: STRING,
+    defaultValue: "New",
   },
   lastName: {
     type: STRING,
+    defaultValue: "User",
   },
   username: {
     type: STRING,

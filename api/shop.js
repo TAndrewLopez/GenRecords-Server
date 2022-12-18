@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Artist, LineItem, Order, Track, Vinyl } = require("../db");
 const { requireToken } = require("./middleware");
 
+//SHOP ROUTES
 router.get("/", async (req, res, next) => {
   try {
     const vinyls = await Vinyl.findAll({
@@ -9,6 +10,20 @@ router.get("/", async (req, res, next) => {
     });
     vinyls.sort((a, b) => a.id - b.id);
     return res.status(200).json({ vinyls });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/:vinylId", async (req, res, next) => {
+  try {
+    const vinyl = await Vinyl.findByPk(req.params.vinylId, {
+      include: {
+        model: Artist,
+      },
+    });
+
+    res.json({ vinyl });
   } catch (error) {
     next(error);
   }
