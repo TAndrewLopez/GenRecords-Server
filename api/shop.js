@@ -9,7 +9,7 @@ router.get("/", async (req, res, next) => {
       include: Artist,
     });
     vinyls.sort((a, b) => a.id - b.id);
-    return res.status(200).json({ vinyls });
+    return res.json({ vinyls });
   } catch (error) {
     next(error);
   }
@@ -82,41 +82,23 @@ router.put("/cart/:vinylId", requireToken, async (req, res, next) => {
       },
     });
 
-    const existingItem = await LineItem.findOne({
-      where: {
-        orderId: cart.id,
-        vinylId: req.params.vinylId,
-      },
-    });
-
-    if (existingItem) {
-      await existingItem.update({ qty: req.body.qty });
-      const newItem = await LineItem.findByPk(existingItem.id, {
-        include: {
-          model: Vinyl,
-          include: {
-            model: Artist,
-          },
-        },
-      });
-      return res.json({ newItem });
-    }
-
     const lineItem = await LineItem.create({
       orderId: cart.id,
       vinylId: req.params.vinylId,
     });
 
-    const newItem = await LineItem.findByPk(lineItem.id, {
+    const itemWithContents = await LineItem.findByPk(lineItem.id, {
+      attributes: ["id", "qty"],
       include: {
         model: Vinyl,
+        attributes: ["id", "name", "stock", "price", "img"],
         include: {
           model: Artist,
+          attributes: ["id", "name"],
         },
       },
     });
-
-    res.json({ newItem });
+    res.json({ itemWithContents });
   } catch (error) {
     next(error);
   }
@@ -127,10 +109,73 @@ router.delete("/cart/:lineId", requireToken, async (req, res, next) => {
     const deletedItem = await LineItem.destroy({
       where: { id: req.params.lineId },
     });
-    res.status(200).send({ deletedItem });
+    res.json({ deletedItem });
   } catch (error) {
     next(error);
   }
 });
 
+router.put("/cart/qty", requireToken, async (req, res, next) => {
+  try {
+    const lineItem = await LineItem.update(
+      { qty: req.body.num },
+      {
+        where: { id: req.body.itemId },
+        individualHooks: true,
+      }
+    );
+    res.json({ lineItem });
+  } catch (error) {
+    next(error);
+  }
+});
 module.exports = router;
+
+// router.put("/cart/:vinylId", requireToken, async (req, res, next) => {
+//   try {
+//     const cart = await Order.findOne({
+//       where: {
+//         complete: false,
+//         userId: req.user.id,
+//       },
+//     });
+
+//     const existingItem = await LineItem.findOne({
+//       where: {
+//         orderId: cart.id,
+//         vinylId: req.params.vinylId,
+//       },
+//     });
+
+//     if (existingItem) {
+//       await existingItem.update({ qty: req.body.qty });
+//       const newItem = await LineItem.findByPk(existingItem.id, {
+//         include: {
+//           model: Vinyl,
+//           include: {
+//             model: Artist,
+//           },
+//         },
+//       });
+//       return res.json({ newItem });
+//     }
+
+//     const lineItem = await LineItem.create({
+//       orderId: cart.id,
+//       vinylId: req.params.vinylId,
+//     });
+
+//     const newItem = await LineItem.findByPk(lineItem.id, {
+//       include: {
+//         model: Vinyl,
+//         include: {
+//           model: Artist,
+//         },
+//       },
+//     });
+
+//     res.json({ newItem });
+//   } catch (error) {
+//     next(error);
+//   }
+// });
