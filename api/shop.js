@@ -30,23 +30,23 @@ router.get("/:vinylId", async (req, res, next) => {
 });
 
 // CART PATHS
-router.put("/cart", requireToken, async (req, res, next) => {
-  try {
-    await Order.update(
-      { complete: true },
-      {
-        where: {
-          complete: false,
-          userId: req.user.id,
-        },
-      }
-    );
-    await Order.create({ userId: req.user.id });
-    res.json({ message: "success" });
-  } catch (error) {
-    next(error);
-  }
-});
+// router.put("/cart", requireToken, async (req, res, next) => {
+//   try {
+//     await Order.update(
+//       { complete: true },
+//       {
+//         where: {
+//           complete: false,
+//           userId: req.user.id,
+//         },
+//       }
+//     );
+//     await Order.create({ userId: req.user.id });
+//     res.json({ message: "success" });
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 router.get("/cart/:userId", requireToken, async (req, res, next) => {
   try {
@@ -75,7 +75,7 @@ router.get("/cart/:userId", requireToken, async (req, res, next) => {
 
 router.put("/cart/:vinylId", requireToken, async (req, res, next) => {
   try {
-    const order = await Order.findOne({
+    const cart = await Order.findOne({
       where: {
         complete: false,
         userId: req.user.id,
@@ -84,13 +84,13 @@ router.put("/cart/:vinylId", requireToken, async (req, res, next) => {
 
     const existingItem = await LineItem.findOne({
       where: {
-        orderId: order.id,
+        orderId: cart.id,
         vinylId: req.params.vinylId,
       },
     });
 
     if (existingItem) {
-      await existingItem.update({ qty: existingItem.qty + 1 });
+      await existingItem.update({ qty: req.body.qty });
       const newItem = await LineItem.findByPk(existingItem.id, {
         include: {
           model: Vinyl,
@@ -103,7 +103,7 @@ router.put("/cart/:vinylId", requireToken, async (req, res, next) => {
     }
 
     const lineItem = await LineItem.create({
-      orderId: order.id,
+      orderId: cart.id,
       vinylId: req.params.vinylId,
     });
 
