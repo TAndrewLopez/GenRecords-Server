@@ -18,7 +18,7 @@ const Vinyl = conn.define(
     },
     stock: {
       type: INTEGER,
-      defaultValue: 0,
+      defaultValue: 10,
     },
     popularity: {
       type: INTEGER,
