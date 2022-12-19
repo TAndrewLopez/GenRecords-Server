@@ -19,9 +19,7 @@ const LineItem = conn.define(
           where: { orderId: lineItem.orderId },
         });
         if (
-          currentItems.some(
-            (item) => item.productId === Number(lineItem.productId)
-          )
+          currentItems.some((item) => item.vinylId === Number(lineItem.vinylId))
         )
           throw new Error("Item already exists in order");
       },
