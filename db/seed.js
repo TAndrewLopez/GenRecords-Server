@@ -52,7 +52,7 @@ const seed = async () => {
             length: track.duration_ms,
             explicit: track.explicit,
             preview: track.preview_url,
-            productId: prod.id,
+            vinylId: prod.id,
           });
         });
         return prod;

@@ -18,9 +18,7 @@ router.get("/", async (req, res, next) => {
 router.get("/:vinylId", async (req, res, next) => {
   try {
     const vinyl = await Vinyl.findByPk(req.params.vinylId, {
-      include: {
-        model: Artist,
-      },
+      include: [Artist, Track],
     });
 
     res.json({ vinyl });
@@ -47,6 +45,27 @@ router.get("/:vinylId", async (req, res, next) => {
 //     next(error);
 //   }
 // });
+
+router.put("/cart/qty", requireToken, async (req, res, next) => {
+  try {
+    const lineItem = await LineItem.findByPk(req.body.id);
+    await lineItem.update({ qty: req.body.qty });
+    const updatedItem = await LineItem.findByPk(req.body.id, {
+      attributes: ["id", "qty"],
+      include: {
+        model: Vinyl,
+        attributes: ["id", "name", "stock", "price", "img"],
+        include: {
+          model: Artist,
+          attributes: ["id", "name"],
+        },
+      },
+    });
+    res.json({ updatedItem });
+  } catch (error) {
+    next(error);
+  }
+});
 
 router.get("/cart/:userId", requireToken, async (req, res, next) => {
   try {
@@ -104,29 +123,15 @@ router.put("/cart/:vinylId", requireToken, async (req, res, next) => {
   }
 });
 
-router.delete("/cart/:lineId", requireToken, async (req, res, next) => {
+router.delete("/cart/:lineItemId", requireToken, async (req, res, next) => {
   try {
-    const deletedItem = await LineItem.destroy({
-      where: { id: req.params.lineId },
+    await LineItem.destroy({
+      where: { id: req.params.lineItemId },
     });
-    res.json({ deletedItem });
+    res.json({ deletedItem: Number(req.params.lineItemId) });
   } catch (error) {
     next(error);
   }
 });
 
-router.put("/cart/qty", requireToken, async (req, res, next) => {
-  try {
-    const lineItem = await LineItem.update(
-      { qty: req.body.num },
-      {
-        where: { id: req.body.itemId },
-        individualHooks: true,
-      }
-    );
-    res.json({ lineItem });
-  } catch (error) {
-    next(error);
-  }
-});
 module.exports = router;
