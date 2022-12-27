@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-
+const pg = require("pg");
 // const config = {
 //   dialect: "postgres",
 //   dialectOptions: {
@@ -34,19 +34,3 @@ const conn = new Sequelize({
 });
 
 module.exports = conn;
-
-// const conn = new Sequelize({
-//   database: "genRecords_server",
-//   username: "tandrewlopez",
-//   password: "FREE123",
-//   host: "mydatabase-instance.cyrkvzihboei.us-east-1.rds.amazonaws.com",
-//   port: 5432,
-//   dialect: "postgres",
-//   dialectModule: pg,
-//   dialectOptions: {
-//     ssl: {
-//       require: true,
-//       rejectUnauthorized: false,
-//     },
-//   },
-// });
