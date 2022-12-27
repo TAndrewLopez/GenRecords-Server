@@ -12,8 +12,8 @@ const config = {
 
 const conn = new Sequelize(
   process.env.DATABASE_URL || "postgres://localhost:5432/recordShop",
-  null,
-  null,
+  process.env.POSTGRES_USER || null,
+  process.env.POSTGRES_PASSWORD || null,
   config
 );
 
