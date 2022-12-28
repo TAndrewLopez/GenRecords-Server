@@ -13,6 +13,10 @@ app.use(express.json());
 //PROJECT API ROUTES
 app.use("/api", require("./api"));
 
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "..", "index.html"));
+});
+
 //ERROR HANDLING FOR SERVER SIDE ISSUES
 app.use((err, req, res, next) => {
   console.error(err.stack);
