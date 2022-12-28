@@ -8,14 +8,10 @@ const seed = async () => {
     await conn.sync({ force: true });
     // LOADING USERS
     await Promise.all(specificUsers.map((user) => User.create(user)));
-    console.log("Created Special Users");
-
     await Promise.all(randomUsers.map((user) => User.create(user)));
-    console.log("Created Other Users");
 
     //LOADING ALBUMS
     const [albums, artists] = await getAlbumData();
-
     await Promise.all(
       albums.map(async (album) => {
         //find artist to assign to product
@@ -34,8 +30,6 @@ const seed = async () => {
             genre: spotifyArtist.genres[0],
           });
         }
-        console.log("Created Artist");
-
         //create the product and give it the artist ID
         let prod = await Vinyl.create({
           name: album.name,
@@ -49,8 +43,6 @@ const seed = async () => {
           label: album.label,
           artistId: art.id,
         });
-        console.log("Created Vinyls");
-
         //create the tracks and give it the product ID
         album.tracks.items.map(async (track) => {
           await Track.create({
@@ -62,7 +54,6 @@ const seed = async () => {
             vinylId: prod.id,
           });
         });
-        console.log("Created Tracks");
         return prod;
       })
     );
