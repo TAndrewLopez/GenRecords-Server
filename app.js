@@ -15,16 +15,16 @@ app.use(express.static(__dirname + "/dist"));
 //PROJECT API ROUTES
 app.use("/api", require("./api"));
 
-app.get("*", (req, res, next) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
-
-// app.get("/*", (req, res) => {
-//   res.sendFile(
-//     path.join(__dirname, "../client/dist/index.html"),
-//     (err) => err && res.status(500).send(err)
-//   );
+// app.get("*", (req, res, next) => {
+//   res.sendFile(path.join(__dirname, "index.html"));
 // });
+
+app.get("/*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "../client/dist/index.html"),
+    (err) => err && res.status(500).send(err)
+  );
+});
 
 //ERROR HANDLING FOR SERVER SIDE ISSUES
 app.use((err, req, res, next) => {
