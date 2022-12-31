@@ -50,6 +50,7 @@ router.put("/cart/qty", requireToken, async (req, res, next) => {
   try {
     const lineItem = await LineItem.findByPk(req.body.id);
     await lineItem.update({ qty: req.body.qty });
+
     const updatedItem = await LineItem.findByPk(req.body.id, {
       attributes: ["id", "qty"],
       include: {
